@@ -141,8 +141,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 .next {
   display: none; }
 
-.question-1 {
+.finish {
   display: none; }
 
-.question-2 {
+h4 {
   display: none; }

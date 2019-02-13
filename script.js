@@ -1,12 +1,13 @@
 
-//Generate a random number between 0 and 255 within a function that can be run to create a new value each time
+let counter = 1;
+let score = 0;
 
+
+//Generates a random number between 0 and 255 
 const randNum = function (){
     const num = Math.floor(Math.random() * 256);
     return num;
 };
-
-//Generate an RGB code
 
 
 // I found a tutorial on Campushippo.com for converting rgb to hex. I was struggling with numbers that only returned a single digit until I found the if statement on their site that solved this problem by adding the 0 as a string. So clever!
@@ -19,7 +20,6 @@ const singleHexValue = function (rgbValue) {
 };
 
 //convert the RGB code to a hex code
-
 const fullHexValue = function (r, g, b) {
     const red = singleHexValue(r);
     const green = singleHexValue(g);
@@ -27,67 +27,94 @@ const fullHexValue = function (r, g, b) {
     return red + green + blue;
 };
 
-// use this function to create 3 variables for the options
-let correctHexCode = "#" + (fullHexValue(randNum(), randNum(), randNum())).toUpperCase();
-// let wrongHexCode1 = "#" + (fullHexValue(randNum(), randNum(), randNum())).toUpperCase();
-// let wrongHexCode2 = "#" + (fullHexValue(randNum(), randNum(), randNum())).toUpperCase();
-// console.log(correctHexCode);
 
-//YOURE GOING TO NEED TO DEFINE A NEW CORRECT HEX CODE FOR EACH ROUND!!!!!!!!!!!!!! Possible just by re-running this code again later after each section?
 
-//lets try to make these functions:
-
-// let correctHexCodeFun = function(){
-//     return "#" + (fullHexValue(randNum(), randNum(), randNum())).toUpperCase();
-// };
-
-let wrongHexCodeFun = function(){
+const generateHexCode = function(){
     return "#" + (fullHexValue(randNum(), randNum(), randNum())).toUpperCase();
 };
 
-// use jQuery to make an h2 that holds the value of fullHexValue
 
-$(".question-1 .color-code h2").text(correctHexCode);
+const generateHexCodesArray = function(){
+    return [generateHexCode(), generateHexCode(), generateHexCode()];
+};
 
-//An array that holds the three color values
 
-const colorCodes = [correctHexCode, wrongHexCodeFun(), wrongHexCodeFun()];
-console.log(colorCodes);
+const displayHexName = function(hexcode){
+    $(".question-1 .color-code h2").text(hexcode);
+};
 
-//this will order them alphabetically, which should be random enough for my purposes.
-console.log(colorCodes.sort());
 
-//put the values into three boxes background colors and also give elements at data id
-$(".option-1").css("background-color", colorCodes[0]).data("id", colorCodes[0]);
-$(".option-2").css("background-color", colorCodes[1]).data("id", colorCodes[1]);
-$(".option-3").css("background-color", colorCodes[2]).data("id", colorCodes[2]);
+const checkAnswer = function (correctHexCode) {
+    $(".question-1 .option").bind("click", function () {
+        $(".question-1 .option").unbind("click");
+        console.log($(this).data("id"));
+        console.log(correctHexCode);
+        if ($(this).data("id") == correctHexCode) {
+            $(".question-1 .color-code h3").text("You're correct")
+            console.log("you're a winner otter baby");
+            score+=1;
+
+        } else {
+            console.log("you are a newt now. Hey Newty baby.")
+            $(".question-1 .color-code h3").text("You're incorrect")
+        }
+
+        if (counter < 10){
+            $(".next").show();
+        } else {
+            $(".finish").show();
+        }
+    });
+};
+
+const generateQuestion = function() {
+    let colorCodes = generateHexCodesArray();
+    let correctHexCode = colorCodes[0];
+    displayHexName(correctHexCode);
+    console.log(correctHexCode);
+    checkAnswer(correctHexCode);
+    console.log(colorCodes);
+    const colorCodesRandom = colorCodes.sort();
+    console.log(colorCodesRandom);
+    displayColors(colorCodesRandom);
+};
+
+
+
+const displayColors = function(colorCodes){
+    $(".question-1 .option-1").css("background-color", colorCodes[0]).data("id", colorCodes[0]);
+    $(".question-1 .option-2").css("background-color", colorCodes[1]).data("id", colorCodes[1]);
+    $(".question-1 .option-3").css("background-color", colorCodes[2]).data("id", colorCodes[2]);
+};
 
 //check to see if user guess is correct
 
-$(".option").bind("click", function(){
-    $(".option").unbind("click");
-    if($(this).data("id") == correctHexCode){
-        $(".color-code h3").text("You're correct")
-        console.log("you're a winner otter baby");
+generateQuestion();
 
-    } else {
-        console.log("you are a newt now. Hey Newty baby.")
-        $(".color-code h3").text("You're incorrect")
+
+$(".next").on("click", function () {
+    $(this).hide();
+    $(".question-1 .color-code h3").text("");
+    counter+=1;
+    if (counter <=10){
+        generateQuestion();
     }
-    $(".next").show();
-    correctHexCode = "#" + (fullHexValue(randNum(), randNum(), randNum())).toUpperCase();
 });
 
-$(".next").on("click", function(){
-    $(".question-1").hide();
-    $(".question-2").show();
+$(".finish").on("click", function(){
+    $("h4").show();
+    $("h4 span").text(score);
 });
 
 
-$('.start').on("click", function(){
-    $(".landing-page").hide();
-    $(".question-1").show();
-});
+
+
+
+
+// $('.start').on("click", function(){
+//     // $(".landing-page").hide();
+//     $(".question-1").show();
+// });
 
 
 
