@@ -1,0 +1,127 @@
+html {
+    font-size: 125%;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+#particles-js {
+    background: black;
+    height: 100vh;
+    // min-height: 800px;
+}
+
+// Hello again, marker! I normally would not position this absolutely, but when using particle.js as the background the only way to position things on top of it is to use absolute positioning. So here we are!
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 70%;
+    min-height: 70vh;
+    background: transparent;
+    border-radius: 10px;
+}
+
+section.active,
+.active {
+    display: block;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.next {
+    display: none;
+}
+
+.finish {
+    display: none;
+}
+
+
+// ----- FONTS ----- //
+h1 {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 80%;
+    font-family: 'Trade Winds', cursive;
+    line-height: 1;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: 5px 5px 10px black;
+}
+
+h2 {
+    font-family: 'Trade Winds', cursive;
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+h4 {
+    font-family: 'Trade Winds', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 0 10px;;
+}
+
+p {
+    line-height: 1.6;
+}
+
+// ----- COLORS ----- //
+.red {
+    color: #EA2027;
+}
+
+.orange {
+    color: #EE5A24;
+}
+
+.yellow {
+    color: #FFC312;
+}
+
+.green {
+    color: #009432;
+}
+
+.blue {
+    color: #0652DD;
+}
+
+.indigo {
+    color: #5758BB;
+}
+
+.violet {
+    color: #D980FA;
+}
+
+.demo-yellow {
+    color: #DEFF22;
+}
+
+.demo-dark {
+    color: #115544;
+}
+
+.demo-light {
+    color: #AAEEDD;
+}
+

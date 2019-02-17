@@ -5,46 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Wizard</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Trade+Winds" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-
-
-    <style>
-        .option {
-            width: 100px;
-            height: 100PX;
-        }    
-    
-    
-    </style>
 </head>
 
-
-
 <body>
+    <main>
+        <div id="particles-js">
+            <canvas class="particles-js-canvas-el"></canvas>
+        </div>
 
-    <section class="landing-page">
-        <button class="start">Start the quiz</button>
-    </section>
+        <!-- Hello Marker! I would never normally have these two elements just handing out here, but, it's the only way I could get the neato background interaction to work. If they were wrapped in a section or a div, that element prevents the cool interaction around these elements, which I didn't want. Particle.js is finicky like that!-->
+        <h1 class="splash active">Color wizard</h1>
+        <button class="splash active"><i class="fas fa-play-circle"></i></button>
 
-    <section class="question-1">
-        <div class="color-code">
-            <h2></h2>
+        <section class="start-page">
+            <div class="start-text">
+                <h2>The evil Color Wizard has captured your friends!</h2>
+                <p>Only you can rescue them...</p>
+                <p>if you can correctly match the color to his hexes!</p>
+            </div>
+            <div class="start-example">
+                <div class="example-text">
+                    <h3>#BADA55</h3>
+                </div>
+                <i class="fas fa-long-arrow-alt-down"></i>
+                <div class="example-colors">
+                    <div class="example-color color-1"></div>
+                    <div class="example-color color-2"></div>
+                    <div class="example-color color-3"></div>
+                </div>
+            </div>
+            <div class="start-buttons">
+                <button class="play">Start</button>
+                <button class="how-to">How to Play</button>
+            </div>
+        </section>
+    
+        <section class="how-to">
+            <h2>Oh Hex No!</h2>
+            <div class="how-to-part part-1 active-part" data-part="1">
+                <p>Hex codes might look like magic, but there's an easy way to understand them.</p>
+                <p>Hex codes are written in hexidecimal. Don't be scared, that's what the Color Wizard wants!</p>
+                <p>It just means they are written using 16 characters. These 16, to be precise:</p>
+                <p class="center">0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+                <div class="how-to-buttons">
+                    <button class="start-menu"><i class="far fa-arrow-alt-circle-left"></i></button>
+                    <button class="next-how-to"><i class="far fa-arrow-alt-circle-right"></i></button>
+                </div>
+            </div>
+    
+            <div class="how-to-part part-2" data-part="2">
+                <p class="center big">#<span class="red">C0</span><span class="green">10</span><span class="blue">25</span></p>
+                <p>Two characters represent how much <span class="red">red</span> is in the color, two represent how much <span class="green">green</span> is in the color, and two represent how much <span class="blue">blue</span> is in the color.</p>
+                <p>Say it with me! R G B! It's the same order they appear in the rainbow. <span class="red">R</span><span class="orange">O</span><span class="yellow">Y</span><span class="green">G</span><span class="blue">B</span><span class="indigo">I</span><span class="violet">V</span>!</p>
+                <div class="how-to-buttons">
+                    <button class="last-how-to"><i class="far fa-arrow-alt-circle-left"></i></button>
+                    <button class="next-how-to"><i class="far fa-arrow-alt-circle-right"></i></button>
+                </div>
+            </div>
+    
+            <div class="how-to-part part-3" data-part="3">
+                <p>"0" is the smallest value, while "F" is the highest. Consider the following:</p>
+                <p><span class="red">#FF0000</span> contains the maximum amout of <span class="red">red</span>, no green, and no blue.</p>
+                <p>The same logic applies for <span class="green">#00FF00</span> (<span class="green">green</span>) and <span class="blue">#0000FF</span> (<span class="blue">blue</span>)</p>
+                <p>So a code like this:</p>
+                <p class="demo-yellow big center">#DEFF22</p>
+                <p>Will have a good amount of <span class="red">red</span>, a lot of <span class="green">green</span> and a little <span class="blue">blue</span>. This creates a bright shade of <span class="yellow">yellow</span>.</p>
+                <div class="how-to-buttons">
+                    <button class="last-how-to"><i class="far fa-arrow-alt-circle-left"></i></button>
+                    <button class="next-how-to"><i class="far fa-arrow-alt-circle-right"></i></button>
+                </div>
+            </div>
+
+            <div class="how-to-part part-4" data-part="4">
+                <p>The hexidecimal value also indicates how light or dark the color will be.</p>
+                <p class="center"><span class="black big">#000000</span> is black. <span class="white big">#FFFFFF</span> is white.</p>
+                <p>See the difference between <span class="demo-dark big">#115544</span> and <span class="demo-light big">#AAEEDD</span> ?</p>
+                <p class="center">Alright, time to rescue those friends of yours!</p>
+                <div class="how-to-buttons">
+                    <button class="last-how-to"><i class="far fa-arrow-alt-circle-left"></i></button>
+                    <button class="play"><i class="far fa-arrow-alt-circle-right"></i></button>
+                </div>
+            </div>
+        </section>
+    
+        <section class="question question-1">
+            <div class="color-code">
+                <h4>The Color Wizard casts:</h4>
+                <h2> </h2>
+            </div>
+            <div class="color-options">
+                <div class="option option-1"></div>
+                <div class="option option-2"></div>
+                <div class="option option-3"></div>
+            </div>
             <h3></h3>
-            <h4>GAME OVER. YOUR SCORE WAS <span class="user-score"></span></h4>
-        </div>
-        <div class="color-options">
-            <div class="option option-1"></div>
-            <div class="option option-2"></div>
-            <div class="option option-3"></div>
-        </div>
+            <div class="question-buttons">
+                <button class="next"><i class="far fa-arrow-alt-circle-right"></i></button>
+                <button class="finish">FINISH</button>
+            </div>
+        </section>
 
-        <button class="next">NEXT</button>
-        <button class="finish">FINISH</button>
-    </section>
-
-
+        <section class="result">
+            <div class="result-text">
+                <h2 class="score">You got <span class="user-score"></span> of 10 hexes correct!</h2>
+                <p></p>
+                <div class="result-img">
+                    <img src="" alt="">
+                </div>
+                <button class="replay">Play again</button>
+            </div>
+        </section>
+        
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
-    <script src="script.js"></script>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>

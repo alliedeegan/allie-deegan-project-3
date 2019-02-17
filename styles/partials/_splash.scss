@@ -1,0 +1,26 @@
+button.splash {
+    background: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    cursor: pointer;
+    text-shadow: 5px 5px 10px black;
+    transition: all 0.3s;
+
+    i {
+        color: #fff;
+        font-size: 100px;
+    }
+
+    &.hat{
+        top: 25%;
+    }
+
+    &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}

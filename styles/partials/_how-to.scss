@@ -1,0 +1,66 @@
+.how-to-part {
+    display: none;
+}
+
+.how-to-part.active-part {
+    display: block;
+}
+
+.how-to {
+    width: 60%;
+
+    h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    // h3 {
+    //     text-align: center;
+    //     font-size: 2rem;
+    // }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 15px 0;
+    }
+
+    p.center{
+        text-align: center;
+    }
+
+    p.big,
+    span.big {
+        font-size: 2rem;
+    }
+
+    button {
+        background: transparent;
+        border: none;
+        color: #fff;
+        margin: 20px 0;
+
+        &:hover i{
+            color: #D6A2E8;
+        }
+    }
+
+    i {
+        color: #fff;
+        font-size: 2.5rem;
+    }
+
+    .how-to-part {
+        background: rgba(0,0,0,0.8);
+        // background: rgba(255,255,255,0.9);
+        padding: 20px 50px;
+        // color: black;
+        color: #fff;
+    }
+
+    .how-to-buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+}
