@@ -4,6 +4,10 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    background: #000;
+}
+
 canvas {
     display: block;
 }
@@ -11,18 +15,19 @@ canvas {
 #particles-js {
     background: black;
     height: 100vh;
-    // min-height: 800px;
+    min-height: 500px;
 }
 
 // Hello again, marker! I normally would not position this absolutely, but when using particle.js as the background the only way to position things on top of it is to use absolute positioning. So here we are!
 section {
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     display: none;
     width: 70%;
     min-height: 70vh;
+    height: auto;
     background: transparent;
     border-radius: 10px;
 }
@@ -45,6 +50,10 @@ img {
     display: none;
 }
 
+button:focus{
+    outline: 2px solid #0652DD;
+}
+
 
 // ----- FONTS ----- //
 h1 {
@@ -59,7 +68,7 @@ h1 {
     line-height: 1;
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-size: 100px;
+    font-size: 5rem;
     text-align: center;
     text-shadow: 5px 5px 10px black;
 }
@@ -83,6 +92,7 @@ h4 {
 p {
     line-height: 1.6;
 }
+
 
 // ----- COLORS ----- //
 .red {
@@ -123,5 +133,30 @@ p {
 
 .demo-light {
     color: #AAEEDD;
+}
+
+
+
+// MEDIA QUERIES
+
+@media (max-width: 1160px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 940px) {
+    h1 {
+        font-size: 3rem;
+    }
+    section {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 2.5rem;
+    }
 }
 

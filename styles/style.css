@@ -150,23 +150,28 @@ html {
   color: #fff;
   font-family: 'Open Sans', sans-serif; }
 
+body {
+  background: #000; }
+
 canvas {
   display: block; }
 
 #particles-js {
   background: black;
-  height: 100vh; }
+  height: 100vh;
+  min-height: 500px; }
 
 section {
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   display: none;
   width: 70%;
   min-height: 70vh;
+  height: auto;
   background: transparent;
   border-radius: 10px; }
 
@@ -184,6 +189,9 @@ img {
 .finish {
   display: none; }
 
+button:focus {
+  outline: 2px solid #0652DD; }
+
 h1 {
   margin: 0;
   position: absolute;
@@ -198,7 +206,7 @@ h1 {
   line-height: 1;
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-size: 100px;
+  font-size: 5rem;
   text-align: center;
   text-shadow: 5px 5px 10px black; }
 
@@ -248,6 +256,20 @@ p {
 .demo-light {
   color: #AAEEDD; }
 
+@media (max-width: 1160px) {
+  h1 {
+    font-size: 4rem; } }
+
+@media (max-width: 940px) {
+  h1 {
+    font-size: 3rem; }
+  section {
+    width: 80%; } }
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2.5rem; } }
+
 button.splash {
   background: none;
   border: none;
@@ -266,13 +288,27 @@ button.splash {
   transition: all 0.3s; }
   button.splash i {
     color: #fff;
-    font-size: 100px; }
-  button.splash.hat {
-    top: 25%; }
+    font-size: 5rem; }
   button.splash:hover {
     -webkit-transform: translate(-50%, -50%) scale(1.1);
     -ms-transform: translate(-50%, -50%) scale(1.1);
     transform: translate(-50%, -50%) scale(1.1); }
+
+@media (max-height: 600px) {
+  button.splash {
+    top: 70%; } }
+
+@media (max-width: 1160px) {
+  button.splash i {
+    font-size: 4rem; } }
+
+@media (max-width: 940px) {
+  button.splash i {
+    font-size: 3rem; } }
+
+@media (max-width: 400px) {
+  button.splash i {
+    font-size: 2.5rem; } }
 
 .start-page h2 {
   font-size: 1.8rem;
@@ -297,7 +333,7 @@ button.splash {
   background: rgba(0, 0, 0, 0.5);
   border: 3px solid white;
   text-transform: uppercase;
-  margin: 0 10px;
+  margin: 0 10px 20px;
   padding: 5px 10px;
   border-radius: 5px;
   color: #fff;
@@ -356,6 +392,30 @@ button.splash {
   -ms-flex-pack: center;
   justify-content: center; }
 
+@media (max-width: 1110px) {
+  .start-page h2 {
+    font-size: 1.2rem; }
+  .start-page h3 {
+    font-size: 1.4rem; }
+  .start-page p {
+    font-size: 1rem; }
+  .start-page button {
+    font-size: 0.8rem; }
+  .start-example {
+    width: 70%; }
+  .example-color {
+    height: 80px;
+    min-width: 80px; } }
+
+@media (max-width: 600px) {
+  .start-example {
+    width: 100%; } }
+
+@media (max-width: 500px) {
+  .example-color {
+    height: 60px;
+    min-width: 60px; } }
+
 .how-to-part {
   display: none; }
 
@@ -398,6 +458,18 @@ button.splash {
     -ms-flex-pack: center;
     justify-content: center; }
 
+@media (max-width: 1000px) {
+  .how-to {
+    width: 80%; } }
+
+@media (max-width: 500px) {
+  .how-to h2 {
+    font-size: 2rem; }
+  .how-to P {
+    font-size: 0.9rem; }
+  .how-to .how-to-part {
+    padding: 10px 30px; } }
+
 section.question {
   background: rgba(0, 0, 0, 0.8);
   width: 40%;
@@ -411,15 +483,18 @@ section.question {
   section.question h3 {
     text-align: center;
     margin: 20px 0 10px; }
-  section.question button {
+  section.question button.next,
+  section.question button.finish {
     background: none;
     border: none;
     margin: 0 auto;
     color: #fff;
     font-size: 3rem; }
-    section.question button:hover {
+    section.question button.next:hover,
+    section.question button.finish:hover {
       color: #D6A2E8; }
-    section.question button.finish {
+    section.question button.next.finish,
+    section.question button.finish.finish {
       background: rgba(0, 0, 0, 0.5);
       border: 3px solid white;
       text-transform: uppercase;
@@ -431,7 +506,8 @@ section.question {
       -webkit-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s; }
-      section.question button.finish:hover {
+      section.question button.next.finish:hover,
+      section.question button.finish.finish:hover {
         border: 3px solid #D6A2E8; }
   section.question .color-options {
     display: -webkit-box;
@@ -448,8 +524,8 @@ section.question {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    width: 100px;
-    height: 100px; }
+    min-width: 100px;
+    min-height: 100px; }
     section.question .option:hover {
       cursor: pointer;
       -webkit-transform: scale(1.1);
@@ -462,6 +538,38 @@ section.question {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
+
+@media (max-width: 1267px) {
+  section.question {
+    width: 50%; } }
+
+@media (max-width: 950px) {
+  section.question {
+    width: 60%; } }
+
+@media (max-width: 760px) {
+  section.question {
+    width: 70%; } }
+
+@media (max-width: 634px) {
+  section.question {
+    width: 80%; } }
+
+@media (max-width: 550px) {
+  section.question h2 {
+    font-size: 2rem; }
+  section.question h4 {
+    font-size: 1.2rem; }
+  section.question .option {
+    min-width: 80px;
+    min-height: 80px; } }
+
+@media (max-width: 400px) {
+  section.question {
+    padding: 50px 0; }
+    section.question .option {
+      min-width: 70px;
+      min-height: 70px; } }
 
 section.result {
   padding: 30px 50px;
@@ -488,5 +596,29 @@ section.result {
     section.result button:hover {
       border: 3px solid #D6A2E8; }
   section.result .result-img {
-    width: 15%;
+    width: 130px;
     margin: 0 auto; }
+
+@media (max-width: 650px) {
+  section.result {
+    padding: 30px 30px; }
+    section.result h2 {
+      font-size: 2rem; }
+    section.result p {
+      font-size: 1rem; }
+    section.result .result-img {
+      width: 100px; } }
+
+@media (max-width: 475px) {
+  section.result {
+    padding: 30px 20px; }
+    section.result h2 {
+      font-size: 1.5rem; } }
+
+@media (max-width: 350px) {
+  section.result h2 {
+    font-size: 1.2rem; }
+  section.result p {
+    font-size: 0.9rem; }
+  section.result button {
+    font-size: 0.9rem; } }

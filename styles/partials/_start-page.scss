@@ -27,7 +27,7 @@
         background: rgba(0,0,0,0.5);
         border: 3px solid white;
         text-transform: uppercase;
-        margin: 0 10px;
+        margin: 0 10px 20px;
         padding: 5px 10px;
         border-radius: 5px;
         color: #fff;
@@ -81,4 +81,49 @@
     margin: 20px auto 0;
     display: flex;
     justify-content: center;
+}
+
+
+// MEDIA QUERIES
+
+@media (max-width: 1110px){
+    .start-page {
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        button {
+            font-size: 0.8rem;
+        }
+    }
+
+    .start-example {
+        width: 70%;
+    }
+
+    .example-color {
+        height: 80px;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .start-example {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .example-color {
+        height: 60px;
+        min-width: 60px;
+    }
 }

@@ -13,14 +13,36 @@ button.splash {
 
     i {
         color: #fff;
-        font-size: 100px;
-    }
-
-    &.hat{
-        top: 25%;
+        font-size: 5rem;
     }
 
     &:hover {
         transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+//Height Media Queries
+@media (max-height: 600px){
+    button.splash {
+        top: 70%;
+    }
+}
+
+//Media Queries
+@media (max-width: 1160px) {
+    button.splash i {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 940px) {
+    button.splash i {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 400px) {
+    button.splash i {
+        font-size: 2.5rem;
     }
 }

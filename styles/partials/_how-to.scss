@@ -14,11 +14,6 @@
         text-align: center;
     }
 
-    // h3 {
-    //     text-align: center;
-    //     font-size: 2rem;
-    // }
-
     p {
         font-size: 1rem;
         line-height: 1.6;
@@ -52,9 +47,7 @@
 
     .how-to-part {
         background: rgba(0,0,0,0.8);
-        // background: rgba(255,255,255,0.9);
         padding: 20px 50px;
-        // color: black;
         color: #fff;
     }
 
@@ -62,5 +55,26 @@
         display: flex;
         justify-content: center;
     }
+}
 
+//MEDIA QUERIES
+
+@media (max-width:1000px){
+    .how-to {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px){
+    .how-to {
+        h2 {
+            font-size: 2rem;
+        }
+        P {
+            font-size: 0.9rem;
+        }
+        .how-to-part {
+            padding: 10px 30px;
+        }
+    }
 }

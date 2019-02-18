@@ -16,7 +16,8 @@ section.question {
         margin: 20px 0 10px;
     }
 
-    button {
+    button.next,
+    button.finish {
         background: none;
         border: none;
         margin: 0 auto;
@@ -54,8 +55,8 @@ section.question {
         border: 5px solid #fff;
         transform: scale(1);
         transition: all 0.3s;
-        width: 100px;
-        height: 100px;
+        min-width: 100px;
+        min-height: 100px;
 
         &:hover {
             cursor: pointer;
@@ -66,5 +67,58 @@ section.question {
     .question-buttons {
         display: flex;
         justify-content: center;
+    }
+}
+
+//MEDIA QUERIES 
+
+@media (max-width: 1267px) {
+    section.question {
+        width: 50%;
+    }
+}
+
+@media (max-width: 950px) {
+    section.question {
+        width: 60%;
+    }
+}
+
+@media (max-width: 760px) {
+    section.question {
+        width: 70%;
+    }
+}
+
+@media (max-width: 634px) {
+    section.question {
+        width: 80%;
+    }
+}
+
+@media (max-width: 550px) {
+    section.question {
+       h2 {
+           font-size: 2rem;
+       }
+       h4 {
+           font-size: 1.2rem;
+       }
+
+       .option {
+           min-width: 80px;
+           min-height: 80px;
+       }
+    }
+}
+
+@media (max-width: 400px){
+    section.question {
+        padding: 50px 0;
+        
+        .option {
+            min-width: 70px;
+            min-height: 70px;
+        }
     }
 }

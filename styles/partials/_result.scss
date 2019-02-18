@@ -30,7 +30,51 @@ section.result {
     }
 
     .result-img {
-        width: 15%;
+        width: 130px;
         margin: 0 auto;
     }
+}
+
+
+//MEDIA QUERIES
+
+@media (max-width: 650px){
+    section.result {
+        padding: 30px 30px;    
+    
+        h2 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+        .result-img {
+            width: 100px;
+        }
+    }   
+}
+
+@media (max-width: 475px){
+    section.result {
+        padding: 30px 20px;    
+    
+        h2 {
+            font-size: 1.5rem;
+        }
+    }   
+}
+
+@media (max-width: 350px){
+    section.result {
+    
+        h2 {
+            font-size: 1.2rem;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+        button {
+            font-size: 0.9rem;
+        }
+    }   
 }
